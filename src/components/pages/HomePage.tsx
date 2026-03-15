@@ -495,7 +495,7 @@ export default function HomePage() {
                     <div>
                       <h3 className="font-paragraph text-xs uppercase tracking-[0.2em] text-secondary/50 mb-3">Reservations & Inquiries</h3>
                       <p className="font-heading text-2xl text-secondary leading-relaxed">
-                        +1 (555) 123-4567
+                        +251948039190
                       </p>
                       <p className="font-paragraph text-sm text-secondary/60 mt-2 font-light">
                         Mon - Fri: 7am - 8pm<br />
