@@ -213,7 +213,7 @@ export default function HomePage() {
                 </FadeIn>
                 <FadeIn delay={0.3}>
                   <p>
-                    From our carefully trained baristas to our thoughtfully designed space, every detail reflects our commitment to excellence and our love for the art of coffee.
+                    ከጥንቃቄ የተሰለጠኑ ባሪስታዎቻችን ጀምሮ እስከ በጥራት የተዘጋጀው ቦታችን ድረስ፣ እያንዳንዱ ዝርዝር ለጥራት ያለን ቁርጠኝነት እና ለቡና ኪነ-ጥበብ ያለን ፍቅር ያንጸባርቃል።
                   </p>
                 </FadeIn>
               </div>
