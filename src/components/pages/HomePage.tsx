@@ -222,13 +222,13 @@ export default function HomePage() {
                 <div className="flex items-center gap-6">
                   <div className="w-16 h-16 rounded-full overflow-hidden border border-primary/10">
                     <Image
-                      src="https://static.wixstatic.com/media/c25388_3b031c3f70bd4637973512099cba4383~mv2.png?originWidth=1152&originHeight=1024"
+                      src="https://static.wixstatic.com/media/c25388_3b031c3f70bd463797351299cba4383~mv2.png?originWidth=1152&originHeight=1024"
                       alt="Master Roaster Signature"
                       className="w-full h-full object-cover grayscale"
                     />
                   </div>
                   <div>
-                    <p className="font-heading text-xl text-primary">Elias Thorne</p>
+                    <p className="font-heading text-xl text-primary">Solomon Haile</p>
                     <p className="font-paragraph text-sm text-primary/50 uppercase tracking-widest">Master Roaster</p>
                   </div>
                 </div>
@@ -477,8 +477,8 @@ export default function HomePage() {
                       <h3 className="font-paragraph text-xs uppercase tracking-[0.2em] text-secondary/50 mb-3">Location</h3>
                       <p className="font-heading text-2xl text-secondary leading-relaxed">
                          Bole Road<br />
-                        Downtown District<br />
-                        New York, NY 10001
+                         Addis Ababa<br />
+                        Ethiopia
                       </p>
                     </div>
                   </div>
