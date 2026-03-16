@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Mail, MapPin, Phone, Twitter } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -129,9 +129,9 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent-gold flex-shrink-0 mt-1" />
                 <span className="font-paragraph text-sm text-primary-foreground/80">
-                  123 Coffee Street<br />
-                  Downtown District<br />
-                  New York, NY 10001
+                  Bole Road<br />
+                  Addis Ababa<br />
+                  Ethiopia
                 </span>
               </li>
               <li className="flex items-center gap-3">
