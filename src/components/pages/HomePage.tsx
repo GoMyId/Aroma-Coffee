@@ -202,13 +202,13 @@ export default function HomePage() {
               <div className="space-y-8 font-paragraph text-lg text-primary/70 leading-relaxed font-light max-w-xl">
                 <FadeIn delay={0.1}>
                   <p>
-                    <span className="text-5xl font-heading text-primary float-left mr-4 mt-2 leading-none">A</span>
+                    <span className="text-5xl font-heading text-primary float-left mr-4 mt-2 leading-none">በ</span>
                      Aroma Coffee እያንዳንዱ የቡና ጽዋ አንድ ታሪክ እንደሚናገር እናምናለን። ከተመሠረተን ጀምሮ ከዓለም ዙሪያ ያሉ ከፍተኛ ጥራት ያላቸውን የቡና ፍሬዎች በመምረጥ እና በትንሽ በጥንቃቄ በሚደረጉ የመጥበስ ሂደቶች ወደ ፍጹምነት ለማድረስ እንተጋለን።.
                   </p>
                 </FadeIn>
                 <FadeIn delay={0.2}>
                   <p>
-                    Our passion for coffee goes beyond the brew. We've created a space where community meets craftsmanship, where every visit is an experience of quiet luxury and sophisticated comfort.
+                    የቡና ላይ ያለን ፍቅር ከመጠጡ በላይ ይደርሳል። ማህበረሰብ እና ክህሎት የሚገናኙበት ቦታ ፈጥረናል፤ እያንዳንዱ ጉብኝትም የጸጥታ ውበትና የተስፋፋ ምቾት የሚሰማበት ልዩ ተሞክሮ እንዲሆን አድርገናል።
                   </p>
                 </FadeIn>
                 <FadeIn delay={0.3}>
