@@ -203,7 +203,7 @@ export default function HomePage() {
                 <FadeIn delay={0.1}>
                   <p>
                     <span className="text-5xl font-heading text-primary float-left mr-4 mt-2 leading-none">A</span>
-                    t Aroma Coffee, we believe that every cup tells a story. Since our founding, we've been dedicated to sourcing the finest beans from around the world and roasting them to perfection in small, meticulous batches.
+                     Aroma Coffee እያንዳንዱ የቡና ጽዋ አንድ ታሪክ እንደሚናገር እናምናለን። ከተመሠረተን ጀምሮ ከዓለም ዙሪያ ያሉ ከፍተኛ ጥራት ያላቸውን የቡና ፍሬዎች በመምረጥ እና በትንሽ በጥንቃቄ በሚደረጉ የመጥበስ ሂደቶች ወደ ፍጹምነት ለማድረስ እንተጋለን።.
                   </p>
                 </FadeIn>
                 <FadeIn delay={0.2}>
