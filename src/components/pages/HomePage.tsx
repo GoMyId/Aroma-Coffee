@@ -1,18 +1,17 @@
 // HPI 1.7-G
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Phone, Mail, MapPin, ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import ProductCarousel from '@/components/ProductCarousel';
-import MenuSection from '@/components/MenuSection';
-import GallerySection from '@/components/GallerySection';
-import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactForm from '@/components/ContactForm';
+import Footer from '@/components/Footer';
+import GallerySection from '@/components/GallerySection';
+import Header from '@/components/Header';
+import MenuSection from '@/components/MenuSection';
+import ProductCarousel from '@/components/ProductCarousel';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import { Image } from '@/components/ui/image';
+import type { CoffeeMenu, CoffeeProducts, ShopGallery, Testimonials } from '@/entities';
 import { BaseCrudService } from '@/integrations';
-import type { CoffeeProducts, CoffeeMenu, ShopGallery, Testimonials } from '@/entities';
+import { AnimatePresence, motion, useInView, useScroll, useTransform } from 'framer-motion';
+import { ArrowRight, ChevronDown, Mail, MapPin, Phone } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
 
 // --- Utility Components for Animation & Layout ---
 
@@ -82,7 +81,7 @@ export default function HomePage() {
         BaseCrudService.getAll<ShopGallery>('shopgallery'),
         BaseCrudService.getAll<Testimonials>('testimonials')
       ]);
-      
+
       setProducts(productsResult.items);
       setMenuItems(menuResult.items);
       setGalleryImages(galleryResult.items);
@@ -115,10 +114,10 @@ export default function HomePage() {
 
       <div className="grain-overlay" />
       <Header />
-      
+
       {/* 1. HERO SECTION - Cinematic Parallax */}
       <section id="home" className="relative w-full h-[100svh] flex items-center justify-center overflow-hidden bg-primary">
-        <motion.div 
+        <motion.div
           className="absolute inset-0 z-0"
           style={{ y: heroY, opacity: heroOpacity }}
         >
@@ -131,7 +130,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-primary/40 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-transparent to-background" />
         </motion.div>
-        
+
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 flex flex-col items-center text-center mt-20">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -149,7 +148,7 @@ export default function HomePage() {
             <p className="font-paragraph text-lg md:text-xl text-secondary/80 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
               Experience the perfect blend of meticulous craftsmanship and sophisticated comfort in every cup.
             </p>
-            
+
             <a href="#products" className="group relative inline-flex items-center justify-center px-10 py-4 overflow-hidden rounded-full bg-transparent border border-accent-gold/50 text-accent-gold transition-all duration-500 hover:border-accent-gold hover:bg-accent-gold hover:text-primary-foreground">
               <span className="font-paragraph text-sm uppercase tracking-widest font-medium relative z-10 flex items-center gap-3">
                 Explore Collection
@@ -159,7 +158,7 @@ export default function HomePage() {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
           className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -189,17 +188,17 @@ export default function HomePage() {
                 width={1200}
               />
             </div>
-            
+
             {/* Scrolling Content Column */}
             <div className="lg:w-1/2 px-8 py-24 md:px-16 lg:px-24 lg:py-48 flex flex-col justify-center bg-background">
               <SectionNumber number="01" title="Our Heritage" />
-              
+
               <FadeIn>
                 <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl text-primary mb-12 leading-tight text-balance">
                   A dedication to the <span className="italic text-muted-brown">perfect pour.</span>
                 </h2>
               </FadeIn>
-              
+
               <div className="space-y-8 font-paragraph text-lg text-primary/70 leading-relaxed font-light max-w-xl">
                 <FadeIn delay={0.1}>
                   <p>
@@ -257,13 +256,13 @@ export default function HomePage() {
               </p>
             </FadeIn>
           </div>
-          
+
           <Hairline className="mb-16" />
-          
+
           <div className="min-h-[600px] relative">
             <AnimatePresence mode="wait">
               {isLoading ? (
-                <motion.div 
+                <motion.div
                   key="loading"
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="absolute inset-0 flex items-center justify-center"
@@ -271,14 +270,14 @@ export default function HomePage() {
                   <div className="w-12 h-12 border-t-2 border-accent-gold rounded-full animate-spin" />
                 </motion.div>
               ) : products.length > 0 ? (
-                <motion.div 
+                <motion.div
                   key="content"
                   initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
                 >
                   <ProductCarousel products={products} />
                 </motion.div>
               ) : (
-                <motion.div 
+                <motion.div
                   key="empty"
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                   className="text-center py-32 border border-primary/10 rounded-2xl bg-background/50"
@@ -307,11 +306,11 @@ export default function HomePage() {
               </p>
             </FadeIn>
           </div>
-          
+
           <div className="min-h-[400px] relative">
             <AnimatePresence mode="wait">
               {isLoading ? (
-                <motion.div 
+                <motion.div
                   key="loading-menu"
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="absolute inset-0 flex items-center justify-center"
@@ -319,14 +318,14 @@ export default function HomePage() {
                   <div className="w-12 h-12 border-t-2 border-accent-gold rounded-full animate-spin" />
                 </motion.div>
               ) : menuItems.length > 0 ? (
-                <motion.div 
+                <motion.div
                   key="content-menu"
                   initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
                 >
                   <MenuSection menuItems={menuItems} />
                 </motion.div>
               ) : (
-                <motion.div 
+                <motion.div
                   key="empty-menu"
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                   className="text-center py-20"
@@ -341,7 +340,7 @@ export default function HomePage() {
 
       {/* 5. VISUAL BREATHER - Parallax Atmosphere */}
       <section className="relative h-[80vh] w-full overflow-hidden z-10">
-        <motion.div 
+        <motion.div
           className="absolute inset-0 w-full h-[130%]"
           style={{ y: breatherY }}
         >
@@ -374,11 +373,11 @@ export default function HomePage() {
               </FadeIn>
             </div>
           </div>
-          
+
           <div className="min-h-[500px] relative">
             <AnimatePresence mode="wait">
               {isLoading ? (
-                <motion.div 
+                <motion.div
                   key="loading-gallery"
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="absolute inset-0 flex items-center justify-center"
@@ -386,14 +385,14 @@ export default function HomePage() {
                   <div className="w-12 h-12 border-t-2 border-accent-gold rounded-full animate-spin" />
                 </motion.div>
               ) : galleryImages.length > 0 ? (
-                <motion.div 
+                <motion.div
                   key="content-gallery"
                   initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
                 >
                   <GallerySection images={galleryImages} />
                 </motion.div>
               ) : (
-                <motion.div 
+                <motion.div
                   key="empty-gallery"
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                   className="text-center py-32 border border-primary/10 rounded-2xl bg-background/50"
@@ -417,11 +416,11 @@ export default function HomePage() {
               </h2>
             </FadeIn>
           </div>
-          
+
           <div className="min-h-[400px] relative">
             <AnimatePresence mode="wait">
               {isLoading ? (
-                <motion.div 
+                <motion.div
                   key="loading-testimonials"
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="absolute inset-0 flex items-center justify-center"
@@ -429,14 +428,14 @@ export default function HomePage() {
                   <div className="w-12 h-12 border-t-2 border-accent-gold rounded-full animate-spin" />
                 </motion.div>
               ) : testimonials.length > 0 ? (
-                <motion.div 
+                <motion.div
                   key="content-testimonials"
                   initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
                 >
                   <TestimonialsSection testimonials={testimonials} />
                 </motion.div>
               ) : (
-                <motion.div 
+                <motion.div
                   key="empty-testimonials"
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                   className="text-center py-20"
@@ -453,7 +452,7 @@ export default function HomePage() {
       <section id="contact" className="py-32 md:py-48 bg-primary text-primary-foreground relative z-20 clip-diagonal">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 lg:px-24 pt-12">
           <div className="grid lg:grid-cols-2 gap-24 items-start">
-            
+
             {/* Contact Info */}
             <div>
               <div className="flex items-center gap-6 mb-12">
@@ -461,13 +460,13 @@ export default function HomePage() {
                 <div className="h-[1px] w-12 bg-accent-gold/50" />
                 <span className="font-paragraph text-xs uppercase tracking-[0.15em] text-secondary/60">Visit Us</span>
               </div>
-              
+
               <FadeIn>
                 <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl mb-12 leading-tight">
                   Let's share a <span className="italic text-accent-gold">moment.</span>
                 </h2>
               </FadeIn>
-              
+
               <div className="space-y-12 mt-16">
                 <FadeIn delay={0.1} direction="right">
                   <div className="flex items-start gap-6 group">
@@ -477,16 +476,16 @@ export default function HomePage() {
                     <div>
                       <h3 className="font-paragraph text-xs uppercase tracking-[0.2em] text-secondary/50 mb-3">Location</h3>
                       <p className="font-heading text-2xl text-secondary leading-relaxed">
-                        123 Coffee Street<br />
+                         Bole Road<br />
                         Downtown District<br />
                         New York, NY 10001
                       </p>
                     </div>
                   </div>
                 </FadeIn>
-                
+
                 <Hairline className="bg-secondary/10" />
-                
+
                 <FadeIn delay={0.2} direction="right">
                   <div className="flex items-start gap-6 group">
                     <div className="mt-1">
@@ -504,9 +503,9 @@ export default function HomePage() {
                     </div>
                   </div>
                 </FadeIn>
-                
+
                 <Hairline className="bg-secondary/10" />
-                
+
                 <FadeIn delay={0.3} direction="right">
                   <div className="flex items-start gap-6 group">
                     <div className="mt-1">
@@ -522,7 +521,7 @@ export default function HomePage() {
                 </FadeIn>
               </div>
             </div>
-            
+
             {/* Contact Form Wrapper */}
             <FadeIn delay={0.4} direction="left" className="lg:mt-32">
               <div className="bg-background text-primary p-10 md:p-16 rounded-sm shadow-2xl relative overflow-hidden">
@@ -531,7 +530,7 @@ export default function HomePage() {
                 <ContactForm />
               </div>
             </FadeIn>
-            
+
           </div>
         </div>
       </section>
