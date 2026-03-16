@@ -137,7 +137,7 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent-gold flex-shrink-0" />
                 <span className="font-paragraph text-sm text-primary-foreground/80">
-                  +1 (555) 123-4567
+                  +251948039190
                 </span>
               </li>
               <li className="flex items-center gap-3">
